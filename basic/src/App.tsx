@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layouts/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -7,7 +7,7 @@ import NoMatch from "./pages/NoMatch";
 
 export default function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -16,6 +16,6 @@ export default function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
